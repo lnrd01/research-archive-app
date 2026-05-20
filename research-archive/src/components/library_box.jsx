@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Profile from "./components/profile";
 import SidePanel from "./components/sidePanel";
+import AcadexiaLibrary from "./components/library_box";
 import profileImg from "./assets/profile-acc.png";
 import { openProfile } from "./store/uiSlice";
 import searchAPI from "./api/search";
@@ -169,7 +170,7 @@ function App() {
         </div>
         <div style={styles.tabRight}>
           <button style={styles.tabBtn} onClick={handleOpenLogin}>🏠 My Profile</button>
-          <button style={styles.tabBtn}>☆ My Library</button>
+          <button style={styles.tabBtn} onClick={() => navigate("/library")}>☆ My Library</button>
         </div>
       </div>
 
@@ -316,6 +317,10 @@ function App() {
               onLogout={handleLogout}
             />
           }
+        />
+        <Route
+          path="/library"
+          element={<AcadexiaLibrary />}
         />
       </Routes>
 
