@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap');
+
+/* --- Root Variables --- */
+:root {
+  --navy: #0d1f5c;
+  --navy-mid: #1a2e6e;
+  --blue-accent: #1a54d4;
+  --blue-light: #dde3f0;
+  --blue-pale: #e8ecf5;
+  --border: #e0e5ef;
+  --border-light: #e4e8f0;
+  --text-muted: #9aa5c4;
+  --text-body: #334070;
+  --text-sub: #6b7a99;
+  --bg-page: #f5f7fc;
+  --white: #ffffff;
+  --red: #c0392b;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', sans-serif;
+}
+
+/* --- Base Reset --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-page);
+  min-height: 100vh;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input {
+  font-family: var(--font-body);
+}
+
+/* ============================================
+   TOP NAVIGATION BAR
+   ============================================ */
+.top-nav {
+  background: var(--navy);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 60px;
+}
+
+.top-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 16px;
+}
+
+.top-nav__logo-text {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.top-nav__search-wrap {
+  flex: 1;
+  max-width: 480px;
+  position: relative;
+}
+
+.top-nav__search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.top-nav__search-input {
+  width: 100%;
+  padding: 9px 14px 9px 36px;
+  border-radius: 24px;
+  border: none;
+  background: rgba(255, 255, 255, 0.13);
+  color: var(--white);
+  font-size: 13px;
+  outline: none;
+}
+
+.top-nav__search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.top-nav__actions {
+  margin-left: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.top-nav__action-btn {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.top-nav__action-btn:hover {
+  color: var(--white);
+}
+
+/* ============================================
+   SUB NAVIGATION (TABS)
+   ============================================ */
+.sub-nav {
+  background: var(--blue-light);
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  height: 44px;
+}
+
+.sub-nav__tab {
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  color: #556;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 16px;
+  height: 100%;
+  margin-right: 4px;
+  transition: all 0.15s;
+}
+
+.sub-nav__tab--active {
+  border-bottom-color: var(--navy);
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.sub-nav__tab:hover:not(.sub-nav__tab--active) {
+  color: var(--navy-mid);
+}
+
+/* ============================================
+   PAGE BODY LAYOUT
+   ============================================ */
+.page-body {
+  display: flex;
+  padding: 24px 28px;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   REFINE RESULTS SIDEBAR
+   ============================================ */
+.refine-panel {
+  width: 200px;
+  flex-shrink: 0;
+  padding-right: 16px;
+  border-right: 1px solid var(--border-light);
+}
+
+.refine-panel__section {
+  margin-bottom: 20px;
+}
+
+.refine-panel__heading {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.refine-panel__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.refine-panel__option input[type="radio"] {
+  accent-color: var(--navy);
+  width: 13px;
+  height: 13px;
+}
+
+.refine-panel__option-label {
+  font-size: 13px;
+  color: var(--text-body);
+}
+
+.refine-panel__option-label--active {
+  color: var(--blue-accent);
+}
+
+/* ============================================
+   MAIN CONTENT AREA
+   ============================================ */
+.content-area {
+  flex: 1;
+}
+
+.content-area__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.content-area__empty {
+  color: var(--text-muted);
+  font-size: 14px;
+  padding: 40px 0;
+  text-align: center;
+}
+
+/* ============================================
+   ARTICLE CARD
+   ============================================ */
+.article-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  margin-bottom: 8px;
+  position: relative;
+  transition: box-shadow 0.2s;
+  box-shadow: 0 1px 3px rgba(10, 30, 80, 0.06);
+}
+
+.article-card:hover {
+  box-shadow: 0 4px 12px rgba(10, 30, 80, 0.11);
+}
+
+.article-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: var(--blue-pale);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+
+.article-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.article-card__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--navy);
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-card__meta {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.article-card__meta-type {
+  color: var(--navy-mid);
+}
+
+.article-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.article-card__icon-btn {
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  color: var(--text-muted);
+  transition: color 0.15s;
+  display: flex;
+  align-items: center;
+}
+
+.article-card__icon-btn--saved {
+  color: var(--navy);
+}
+
+.article-card__icon-btn:hover {
+  color: var(--navy);
+  background: var(--blue-pale);
+}
+
+/* ============================================
+   DROPDOWN MENU
+   ============================================ */
+.dropdown-menu {
+  position: absolute;
+  right: 8px;
+  top: 52px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(10, 30, 80, 0.13);
+  z-index: 10;
+  min-width: 140px;
+  overflow: hidden;
+}
+
+.dropdown-menu__item {
+  display: block;
+  width: 100%;
+  padding: 9px 16px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 13px;
+  color: var(--navy);
+}
+
+.dropdown-menu__item:hover {
+  background: var(--blue-pale);
+}
+
+.dropdown-menu__item--danger {
+  color: var(--red);
+}
+
+/* ============================================
+   READING LIST CARDS
+   ============================================ */
+.reading-list-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(10, 30, 80, 0.06);
+  transition: box-shadow 0.15s;
+  position: relative;
+}
+
+.reading-list-card:hover {
+  box-shadow: 0 4px 12px rgba(10, 30, 80, 0.12);
+}
+
+.reading-list-card__thumbnail {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: var(--blue-pale);
+  flex-shrink: 0;
+}
+
+.reading-list-card__name {
+  flex: 1;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--navy);
+}
+
+.reading-list-card__count {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-right: 8px;
+}
+
+/* ============================================
+   CREATE LIST BUTTON & INPUT
+   ============================================ */
+.create-list-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue-light);
+  border: none;
+  border-radius: 24px;
+  padding: 9px 20px;
+  font-size: 13px;
+  color: var(--navy);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.create-list-btn:hover {
+  background: #c8d2e8;
+}
+
+.create-list-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.create-list-input {
+  padding: 9px 14px;
+  border-radius: 24px;
+  border: 1.5px solid #b0bcd8;
+  font-size: 13px;
+  outline: none;
+  min-width: 220px;
+}
+
+.create-list-input:focus {
+  border-color: var(--blue-accent);
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+
+.btn-secondary {
+  background: none;
+  border: 1px solid #b0bcd8;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 13px;
+  color: #556;
+}
+
+/* ============================================
+   BACK BUTTON ROW (reading list detail)
+   ============================================ */
+.back-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 18px;
+  padding: 0;
+}
+
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+/* ============================================
+   RENAME INPUT (inline inside reading list card)
+   ============================================ */
+.rename-input {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1.5px solid var(--blue-accent);
+  font-size: 14px;
+  outline: none;
+}
