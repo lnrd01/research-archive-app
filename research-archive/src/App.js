@@ -95,11 +95,13 @@ function ArticlesPage({
         </form>
 
         <div style={styles.navRight}>
-          {user.username !== "Guest" && (
+          {user.username !== "Guest" ? (
             <button type="button" style={styles.userBadge} onClick={handleOpenLogin}>
               <img src={user.image} alt="Avatar" style={styles.userAvatar} />
               {user.username}
             </button>
+          ) : (
+            <button type="button" style={styles.loginButton} onClick={handleOpenLogin}>Log In</button>
           )}
         </div>
       </div>
@@ -111,8 +113,8 @@ function ArticlesPage({
         </div>
         <div style={styles.tabRight}>
           <button style={styles.tabBtn} onClick={() => navigate("/")}> Home</button>
-          <button style={styles.tabBtn} onClick={handleOpenLogin}> My Profile</button>
           <button style={styles.tabBtn} onClick={() => navigate("/library")}> My Library</button>
+          <button style={styles.tabBtn} onClick={handleOpenLogin}> My Profile</button>
         </div>
       </div>
 

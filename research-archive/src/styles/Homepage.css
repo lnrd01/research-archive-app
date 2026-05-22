@@ -99,6 +99,25 @@
   line-height: 1;
 }
 
+.home-logo-button {
+  padding: 10px 24px;
+  border: 1.5px solid rgba(200, 215, 255, 0.6);
+  background: rgba(200, 215, 255, 0.08);
+  color: rgba(200, 215, 255, 0.95);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-logo-button:hover {
+  background: rgba(200, 215, 255, 0.15);
+  border-color: rgba(200, 215, 255, 0.9);
+  color: #ffffff;
+}
+
 /* HERO */
 .home-hero {
   position: relative;
