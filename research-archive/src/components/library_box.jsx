@@ -475,24 +475,26 @@ export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
             placeholder="Filter saved articles..."
           />
         </div>
-        <div className="top-nav__actions">
-          <button className="top-nav__action-btn" onClick={() => navigate("/")}>⌂ Home</button>
-          <button className="top-nav__action-btn" onClick={() => navigate("/profile")}>My Profile</button>
-          <button className="top-nav__action-btn" onClick={() => navigate("/articles")}>Articles</button>
-        </div>
       </nav>
 
       {/* SUB NAV */}
       <nav className="sub-nav">
-        {NAV_TABS.map((tab) => (
-          <button
-            key={tab}
-            className={`sub-nav__tab ${activeTab === tab ? "sub-nav__tab--active" : ""}`}
-            onClick={() => { setActiveTab(tab); setSelectedList(null); }}
-          >
-            {tab}
-          </button>
-        ))}
+        <div className="sub-nav__tabs">
+          {NAV_TABS.map((tab) => (
+            <button
+              key={tab}
+              className={`sub-nav__tab ${activeTab === tab ? "sub-nav__tab--active" : ""}`}
+              onClick={() => { setActiveTab(tab); setSelectedList(null); }}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+        <div className="sub-nav__actions">
+          <button className="sub-nav__action-btn" onClick={() => navigate("/")}>Home</button>
+          <button className="sub-nav__action-btn" onClick={() => navigate("/profile")}>My Profile</button>
+          <button className="sub-nav__action-btn" onClick={() => navigate("/articles")}>Articles</button>
+        </div>
       </nav>
 
       <div className="page-body">
@@ -677,7 +679,7 @@ export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
   );
 }
 
-// ── inline style tokens ──
+// ── inline style ──
 const rlCard = {
   thumb: {
     width: 44, height: 44, borderRadius: 8,

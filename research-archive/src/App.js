@@ -94,14 +94,6 @@ function ArticlesPage({
           />
         </form>
 
-        <div style={styles.navRight}>
-          {user.username !== "Guest" && (
-            <button type="button" style={styles.userBadge} onClick={handleOpenLogin}>
-              <img src={user.image} alt="Avatar" style={styles.userAvatar} />
-              {user.username}
-            </button>
-          )}
-        </div>
       </div>
 
       {/* TAB BAR */}
@@ -317,7 +309,7 @@ const styles = {
   navLogo: { display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 },
   logoIcon: { width: "28px", height: "28px", objectFit: "contain" },
   logoText: { fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif", fontSize: "20px", fontWeight: "400", letterSpacing: "0.12em", color: "rgba(200,215,255,0.95)" },
-  navSearchForm: { flex: 1, maxWidth: "540px", display: "flex", alignItems: "center", backgroundColor: "#ffffff", borderRadius: "999px", padding: "8px 16px", gap: "8px" },
+  navSearchForm: { flex: "0 1 540px", maxWidth: "540px", margin: "0 auto", display: "flex", alignItems: "center", backgroundColor: "#ffffff", borderRadius: "999px", padding: "8px 16px", gap: "8px" },
   searchIcon: { fontSize: "14px", color: "#888" },
   navSearchInput: { border: "none", outline: "none", width: "100%", fontSize: "14px", color: "#333", backgroundColor: "transparent" },
   navRight: { flexShrink: 0 },
@@ -328,7 +320,7 @@ const styles = {
   tabLeft: { display: "flex", alignItems: "center" },
   activeTab: { fontSize: "15px", fontWeight: "600", color: "#1a1a2e", padding: "12px 4px", borderBottom: "2.5px solid #1a1a2e", cursor: "pointer", display: "inline-block" },
   tabRight: { display: "flex", gap: "16px", alignItems: "center" },
-  tabBtn: { background: "none", border: "none", cursor: "pointer", fontSize: "13.5px", color: "#444", padding: "10px 0", display: "flex", alignItems: "center", gap: "6px" },
+  tabBtn: { background: "none", border: "none", cursor: "pointer", fontSize: "13.5px", color: "#444", padding: "0 14px", height: "34px", borderRadius: "999px", display: "inline-flex", alignItems: "center", gap: "6px", transition: "background 0.2s, color 0.2s" },
   mainArea: { display: "flex", flex: 1, width: "100%" },
   sidebarWrapper: { width: "240px", flexShrink: 0, backgroundColor: "#ffffff", borderRight: "1px solid #e0e0e0" },
   resultsWrapper: { flex: 1, padding: "24px 28px", boxSizing: "border-box" },
