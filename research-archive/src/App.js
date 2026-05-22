@@ -39,16 +39,16 @@ function ArticlesPage({
       filtered = filtered.filter((r) => { const y = parseYear(r.year); return y !== null && y >= 2022; });
     } else if (typeof timeFilter === "object" && (timeFilter.from || timeFilter.to)) {
       const from = timeFilter.from ? parseInt(timeFilter.from, 10) : 0;
-      const to   = timeFilter.to   ? parseInt(timeFilter.to,   10) : currentYear;
+      const to = timeFilter.to ? parseInt(timeFilter.to, 10) : currentYear;
       filtered = filtered.filter((r) => { const y = parseYear(r.year); return y !== null && y >= from && y <= to; });
     }
 
     if (typeFilter !== "Any type") {
       const typeKeywords = {
-        "Review Articles":   ["review", "meta-analysis", "literature review", "systematic"],
+        "Review Articles": ["review", "meta-analysis", "literature review", "systematic"],
         "Research Articles": ["research", "study", "investigation", "analysis", "experiment", "findings", "paper"],
         "Conference Papers": ["conference", "proceedings", "symposium", "workshop", "congress"],
-        "Thesis":            ["thesis", "dissertation", "doctoral", "graduate", "master"],
+        "Thesis": ["thesis", "dissertation", "doctoral", "graduate", "master"],
       };
       const keywords = typeKeywords[typeFilter] || [];
       filtered = filtered.filter((r) => {
@@ -107,6 +107,7 @@ function ArticlesPage({
           <span style={styles.activeTab}>Articles</span>
         </div>
         <div style={styles.tabRight}>
+          <button style={styles.tabBtn} onClick={() => navigate("/")}>⌂ Home</button>
           <button style={styles.tabBtn} onClick={handleOpenLogin}>🏠 My Profile</button>
           <button style={styles.tabBtn} onClick={() => navigate("/library")}>☆ My Library</button>
         </div>
@@ -211,7 +212,7 @@ function ArticlesPage({
 function App() {
   const [searchValue, setSearchValue] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [loading, setLoading]         = useState(false);
+  const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
   const [user, setUser] = useState({ username: "Guest", email: "--", image: profileImg });
 
@@ -258,9 +259,9 @@ function App() {
     navigate("/articles");
   };
 
-  const handleOpenLogin    = () => { dispatch(openProfile()); navigate("/profile"); };
+  const handleOpenLogin = () => { dispatch(openProfile()); navigate("/profile"); };
   const handleLoginSuccess = (loggedUser) => setUser(loggedUser);
-  const handleLogout       = () => setUser({ username: "Guest", email: "--", image: profileImg });
+  const handleLogout = () => setUser({ username: "Guest", email: "--", image: profileImg });
 
   return (
     <Routes>
@@ -311,8 +312,8 @@ const styles = {
   page: { minHeight: "100vh", width: "100%", display: "flex", flexDirection: "column", backgroundColor: "#f5f5f8", fontFamily: "'Segoe UI', sans-serif", boxSizing: "border-box" },
   navbar: { width: "100%", backgroundColor: "#0d1b3e", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 24px", boxSizing: "border-box", gap: "16px" },
   navLogo: { display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 },
-  logoIcon: { fontSize: "22px", color: "#a0b4d6" },
-  logoText: { fontSize: "18px", fontWeight: "700", letterSpacing: "2px", color: "#ffffff" },
+  logoIcon: { fontSize: "28px", color: "rgba(200,215,255,0.9)", lineHeight: 1 },
+  logoText: { fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif", fontSize: "20px", fontWeight: "400", letterSpacing: "0.12em", color: "rgba(200,215,255,0.95)" },
   navSearchForm: { flex: 1, maxWidth: "540px", display: "flex", alignItems: "center", backgroundColor: "#ffffff", borderRadius: "999px", padding: "8px 16px", gap: "8px" },
   searchIcon: { fontSize: "14px", color: "#888" },
   navSearchInput: { border: "none", outline: "none", width: "100%", fontSize: "14px", color: "#333", backgroundColor: "transparent" },

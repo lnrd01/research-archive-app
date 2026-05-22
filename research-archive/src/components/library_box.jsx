@@ -478,6 +478,7 @@ export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
           />
         </div>
         <div className="top-nav__actions">
+          <button className="top-nav__action-btn" onClick={() => navigate("/")}>⌂ Home</button>
           <button className="top-nav__action-btn" onClick={() => navigate("/profile")}>My Profile</button>
           <button className="top-nav__action-btn" onClick={() => navigate("/articles")}>Articles</button>
         </div>
