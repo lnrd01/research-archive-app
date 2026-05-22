@@ -39,7 +39,7 @@ const Profile = ({ user, onLogin, onLogout }) => {
   const handleClose = () => {
     dispatch(closeProfile());
     setShowModal(false);
-    navigate('/');
+    navigate(-1);
   };
 
   const handleCloseModal = () => {
@@ -104,7 +104,7 @@ const Profile = ({ user, onLogin, onLogout }) => {
 
   return (
     <div className="page-container" onClick={handleClose}>
-      {/* PROFILE CARD */}
+      {/* Profile card */}
       <div className="card-container" onClick={(e) => e.stopPropagation()}>
         <div className="profile-section">
           <div className="profile-image-wrapper">
@@ -129,7 +129,7 @@ const Profile = ({ user, onLogin, onLogout }) => {
         </div>
       </div>
 
-      {/* --- Login and Sign Up Modals --- */}
+      {/* Login and Sign Up Section */}
       {showModal && (
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>

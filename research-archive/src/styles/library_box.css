@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap');
 
-/* --- Root Variables --- */
+/* Root Variables */
 :root {
   --navy: #0d1f5c;
   --navy-mid: #1a2e6e;
@@ -19,7 +19,7 @@
   --font-body: 'Lato', sans-serif;
 }
 
-/* --- Base Reset --- */
+/* Base Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,9 +41,7 @@ input {
   font-family: var(--font-body);
 }
 
-/* ============================================
-   TOP NAVIGATION BAR
-   ============================================ */
+/* TOP NAVIGATION BAR */
 .top-nav {
   background: var(--navy);
   padding: 0 28px;
@@ -118,9 +116,7 @@ input {
   color: var(--white);
 }
 
-/* ============================================
-   SUB NAVIGATION (TABS)
-   ============================================ */
+/* TABS */
 .sub-nav {
   background: var(--blue-light);
   padding: 0 28px;
@@ -152,9 +148,7 @@ input {
   color: var(--navy-mid);
 }
 
-/* ============================================
-   PAGE BODY LAYOUT
-   ============================================ */
+/* PAGE BODY */
 .page-body {
   display: flex;
   padding: 24px 28px;
@@ -163,9 +157,6 @@ input {
   margin: 0 auto;
 }
 
-/* ============================================
-   REFINE RESULTS SIDEBAR
-   ============================================ */
 .refine-panel {
   width: 200px;
   flex-shrink: 0;
@@ -209,9 +200,7 @@ input {
   color: var(--blue-accent);
 }
 
-/* ============================================
-   MAIN CONTENT AREA
-   ============================================ */
+/* MAIN CONTENT */
 .content-area {
   flex: 1;
 }
@@ -231,9 +220,7 @@ input {
   text-align: center;
 }
 
-/* ============================================
-   ARTICLE CARD
-   ============================================ */
+/* ARTICLE CARD */
 .article-card {
   display: flex;
   align-items: center;
@@ -316,9 +303,7 @@ input {
   background: var(--blue-pale);
 }
 
-/* ============================================
-   DROPDOWN MENU
-   ============================================ */
+/* DROPDOWN MENU */
 .dropdown-menu {
   position: absolute;
   right: 8px;
@@ -351,9 +336,7 @@ input {
   color: var(--red);
 }
 
-/* ============================================
-   READING LIST CARDS
-   ============================================ */
+/* READING LIST CARD */
 .reading-list-card {
   display: flex;
   align-items: center;
@@ -395,9 +378,7 @@ input {
   margin-right: 8px;
 }
 
-/* ============================================
-   CREATE LIST BUTTON & INPUT
-   ============================================ */
+/* LIST BUTTON */
 .create-list-btn {
   display: flex;
   align-items: center;
@@ -454,9 +435,7 @@ input {
   color: #556;
 }
 
-/* ============================================
-   BACK BUTTON ROW (reading list detail)
-   ============================================ */
+/* BACK ROW BUTTON */
 .back-row {
   display: flex;
   align-items: center;
@@ -479,9 +458,7 @@ input {
   opacity: 0.7;
 }
 
-/* ============================================
-   RENAME INPUT (inline inside reading list card)
-   ============================================ */
+/* RENAME INPUT BUTTON */
 .rename-input {
   flex: 1;
   padding: 6px 10px;
