@@ -1,115 +1,64 @@
-# Getting Started with Create React App
+# ACADEXIA ITPS205 & PELEC202 Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+> *Elevating the pursuit of truth into the practice of wisdom.*
 
-In the project directory, you can run:
+---
 
-### `npm start`
+ACADEXIA is a React-based academic research library application that allows users to discover, search, and organize scholarly articles powered by the [CORE API](https://core.ac.uk/). Users can build personal reading lists, archive saved content, and manage their profiles — all in a clean and minimal interface.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Screenshots
 
 
 
-## ITPS205 & PELEC202 PROJECT
+![Home](research-archive/src/assets/home.jpg)
 
-GROUP 1 MEMBERS: 
 
-SEBUC, KARL LOUISE S.
 
-DE VILLA, JOHN MARC A.
 
-NANOY, STEPHANIE MARIE P.
 
-URSUA, MAUREEN JANE L.
+![Search Result](research-archive/src/assets/search.jpg)
 
-CRUZ, FENDER B.
 
-AGAWIN, JOSHUA EZEKIEL A.
 
-DE LEON, KIER CYNON R.
 
-ZARSADIAS, TERYX B.
 
-CAREG, NEFTALY AYAN.
+![My Library](research-archive/src/assets/myLibrary.jpg)
 
-METRAN, RAFAEL L.
+---
 
-DE ROBLES, ROCHELLE CAMILLE M.
+## Features
 
-DIAZ, GABRIEL CLINTON E.
+- 🔍 **Article Search** — Search millions of open-access research articles via the CORE API
+- 📅 **Filter & Sort** — Refine results by publication date range, article type (Review Articles, Research Articles, Conference Papers, Thesis), and sort by relevance or date
+- 📚 **My Library** — Save articles to personal reading lists and archives
+- 👤 **User Profiles** — Guest and authenticated account support with profile management
+- ⚡ **Fast & Responsive** — Built with React for a smooth single-page experience
 
-PETALVERO, CEEJAY L.
+---
 
-DE MESA, SAVANNAH MARI B.
+## Design
 
-CABANA, LOVELY CLAIRE M.
+The UI/UX was designed in Figma before development. You can view the prototype here:
 
-MELECIA, CHRISTIAN LENARD P.
+🎨 [View Figma Design](https://www.figma.com/design/epawOtHnbxjIiINwewxYei/boom-tarat-tarat?node-id=0-1&p=f&t=8QJHUIMrYbWUnkKX-0)
 
-GARCIA, JAYVEE C.
+---
 
-LABIOS, JODEL G.
+## 
+**Group 1 Members**
 
-IMPERIAL, JAMES WALTER O.
-
+| | |
+|---|---|
+| 1. Sebuc, Karl Louise S. | 11. De Robles, Rochelle Camille M. |
+| 2. De Villa, John Marc A. | 12. Diaz, Gabriel Clinton E. |
+| 3. Nanoy, Stephanie Marie P. | 13. Petalvero, Ceejay L. |
+| 4. Ursua, Maureen Jane L. | 14. De Mesa, Savannah Mari B. |
+| 5. Cruz, Fender B. | 15. Cabana, Lovely Claire M. |
+| 6. Agawin, Joshua Ezekiel A. | 16. Melecia, Christian Lenard P. |
+| 7. De Leon, Kier Cynon R. | 17. Garcia, Jayvee C. |
+| 8. Zarsadias, Teryx B. | 18. Labios, Jodel G. |
+| 9. Careg, Neftaly Ayan. | 19. Imperial, James Walter O. |
+| 10. Metran, Rafael L. | |
