@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/library_box.css";
+import acadexiaLogo from "../assets/acadexia_logo.jpg";
 import {
   NAV_TABS,
   TIME_FILTERS,
@@ -8,6 +9,7 @@ import {
   INITIAL_READING_LISTS,
   filterArticles,
 } from "./acadexiaData.jsx";
+import logoConcept from "../assets/logo concept.png";
 
 function BookIcon({ size = 24 }) {
   return (
@@ -46,12 +48,7 @@ function SearchIcon() {
   );
 }
 function LogoIcon() {
-  return (
-    <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-      <path d="M16 4 L28 28 L16 22 L4 28 Z" fill="white" opacity="0.9" />
-      <path d="M10 10 L22 10" stroke="white" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
+  return <img src={acadexiaLogo} alt="Acadexia logo" className="top-nav__logo-mark" />;
 }
 function PlusIcon() {
   return (
@@ -87,8 +84,8 @@ function ListIcon() {
 // ADD TO LIST FUNCTIONALITY //
 function AddToListModal({ article, readingLists, onAddToList, onCreateAndAdd, onClose }) {
   const [newListName, setNewListName] = useState("");
-  const [creating, setCreating]       = useState(false);
-  const [justAdded, setJustAdded]     = useState(null); // list id that was just added
+  const [creating, setCreating] = useState(false);
+  const [justAdded, setJustAdded] = useState(null); // list id that was just added
 
   const handleAdd = (list) => {
     const alreadyIn = list.articles.some((a) => (a.id ?? a.title) === (article.id ?? article.title));
@@ -303,7 +300,7 @@ function RefinePanel({ timeFilter, setTimeFilter, articleType, setArticleType, s
 
 // ARTICLE CARD SECTION //
 function ArticleCard({ article, onSaveToggle, isSaved, readingLists, onAddToList, onCreateAndAdd, onRemoveFromList }) {
-  const [menuOpen, setMenuOpen]       = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
 
   const authorsText = Array.isArray(article.authors)
@@ -382,19 +379,19 @@ function ArticleCard({ article, onSaveToggle, isSaved, readingLists, onAddToList
 export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
   const navigate = useNavigate();
 
-  const [activeTab, setActiveTab]       = useState("My Library");
-  const [search, setSearch]             = useState("");
-  const [timeFilter, setTimeFilter]     = useState("Any time");
-  const [articleType, setArticleType]   = useState("Any type");
-  const [sortBy, setSortBy]             = useState("Sort by relevance");
+  const [activeTab, setActiveTab] = useState("My Library");
+  const [search, setSearch] = useState("");
+  const [timeFilter, setTimeFilter] = useState("Any time");
+  const [articleType, setArticleType] = useState("Any type");
+  const [sortBy, setSortBy] = useState("Sort by relevance");
 
   const [readingLists, setReadingLists] = useState(INITIAL_READING_LISTS);
   const [selectedList, setSelectedList] = useState(null); // { id, name, articles }
-  const [listMenu, setListMenu]         = useState(null);
+  const [listMenu, setListMenu] = useState(null);
   const [creatingList, setCreatingList] = useState(false);
-  const [newListName, setNewListName]   = useState("");
-  const [renamingId, setRenamingId]     = useState(null);
-  const [renameValue, setRenameValue]   = useState("");
+  const [newListName, setNewListName] = useState("");
+  const [renamingId, setRenamingId] = useState(null);
+  const [renameValue, setRenameValue] = useState("");
 
   const savedIds = new Set(savedArticles.map((a) => a.id ?? a.title));
 
@@ -560,16 +557,16 @@ export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
                     {list.articles.length === 0
                       ? <span style={{ fontSize: 20, color: "#8899bb" }}>📚</span>
                       : list.articles.slice(0, 4).map((a, i) => (
-                          <div key={i} style={rlCard.thumbCell}><BookIcon size={14} /></div>
-                        ))
+                        <div key={i} style={rlCard.thumbCell}><BookIcon size={14} /></div>
+                      ))
                     }
                   </div>
 
                   {renamingId === list.id
                     ? <input autoFocus className="rename-input" value={renameValue}
-                        onChange={(e) => setRenameValue(e.target.value)}
-                        onKeyDown={(e) => { if (e.key === "Enter") renameList(list.id); if (e.key === "Escape") setRenamingId(null); }}
-                        onClick={(e) => e.stopPropagation()} />
+                      onChange={(e) => setRenameValue(e.target.value)}
+                      onKeyDown={(e) => { if (e.key === "Enter") renameList(list.id); if (e.key === "Escape") setRenamingId(null); }}
+                      onClick={(e) => e.stopPropagation()} />
                     : (
                       <div style={rlCard.info}>
                         <span className="reading-list-card__name">{list.name}</span>
@@ -659,16 +656,16 @@ export default function AcadexiaLibrary({ savedArticles = [], onSaveToggle }) {
               {savedArticles.length === 0
                 ? <p className="content-area__empty">No archived articles yet. Save articles from the Articles page first.</p>
                 : savedArticles.map((a) => (
-                    <ArticleCard
-                      key={a.id ?? a.title}
-                      article={a}
-                      isSaved={savedIds.has(a.id ?? a.title)}
-                      onSaveToggle={onSaveToggle}
-                      readingLists={readingLists}
-                      onAddToList={handleAddToList}
-                      onCreateAndAdd={handleCreateAndAdd}
-                    />
-                  ))
+                  <ArticleCard
+                    key={a.id ?? a.title}
+                    article={a}
+                    isSaved={savedIds.has(a.id ?? a.title)}
+                    onSaveToggle={onSaveToggle}
+                    readingLists={readingLists}
+                    onAddToList={handleAddToList}
+                    onCreateAndAdd={handleCreateAndAdd}
+                  />
+                ))
               }
             </div>
           </>

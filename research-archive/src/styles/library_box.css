@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Lato:wght@400;700&display=swap');
 
 /* Root Variables */
 :root {
@@ -15,7 +15,7 @@
   --bg-page: #f5f7fc;
   --white: #ffffff;
   --red: #c0392b;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
   --font-body: 'Lato', sans-serif;
 }
 
@@ -58,12 +58,18 @@ input {
   margin-right: 16px;
 }
 
+.top-nav__logo-mark {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
 .top-nav__logo-text {
   color: var(--white);
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 18px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
 }
 
 .top-nav__search-wrap {

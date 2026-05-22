@@ -6,6 +6,7 @@ import SidePanel from "./components/sidePanel";
 import HomePage from "./components/Homepage";
 import AcadexiaLibrary from "./components/library_box";
 import profileImg from "./assets/profile-acc.png";
+import acadexiaLogo from "./assets/acadexia_logo.jpg";
 import { openProfile } from "./store/uiSlice";
 import searchAPI from "./api/search";
 
@@ -74,12 +75,16 @@ function ArticlesPage({
       {/* NAVBAR */}
       <div style={styles.navbar}>
         <div style={styles.navLogo}>
-          <span style={styles.logoIcon}>✦</span>
+          <img src={acadexiaLogo} alt="Acadexia logo" style={styles.logoIcon} />
           <span style={styles.logoText}>ACADEXIA</span>
         </div>
 
         <form style={styles.navSearchForm} onSubmit={handleSearch}>
-          <span style={styles.searchIcon}>🔍</span>
+          <span style={styles.searchIcon} aria-hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21 21L15.5 15.5M17 10.5C17 14.09 14.09 17 10.5 17C6.91 17 4 14.09 4 10.5C4 6.91 6.91 4 10.5 4C14.09 4 17 6.91 17 10.5Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
           <input
             style={styles.navSearchInput}
             type="text"
@@ -90,13 +95,11 @@ function ArticlesPage({
         </form>
 
         <div style={styles.navRight}>
-          {user.username !== "Guest" ? (
+          {user.username !== "Guest" && (
             <button type="button" style={styles.userBadge} onClick={handleOpenLogin}>
               <img src={user.image} alt="Avatar" style={styles.userAvatar} />
               {user.username}
             </button>
-          ) : (
-            <button type="button" style={styles.loginButton} onClick={handleOpenLogin}>Log In</button>
           )}
         </div>
       </div>
@@ -107,9 +110,9 @@ function ArticlesPage({
           <span style={styles.activeTab}>Articles</span>
         </div>
         <div style={styles.tabRight}>
-          <button style={styles.tabBtn} onClick={() => navigate("/")}>⌂ Home</button>
-          <button style={styles.tabBtn} onClick={handleOpenLogin}>🏠 My Profile</button>
-          <button style={styles.tabBtn} onClick={() => navigate("/library")}>☆ My Library</button>
+          <button style={styles.tabBtn} onClick={() => navigate("/")}> Home</button>
+          <button style={styles.tabBtn} onClick={handleOpenLogin}> My Profile</button>
+          <button style={styles.tabBtn} onClick={() => navigate("/library")}> My Library</button>
         </div>
       </div>
 
@@ -312,7 +315,7 @@ const styles = {
   page: { minHeight: "100vh", width: "100%", display: "flex", flexDirection: "column", backgroundColor: "#f5f5f8", fontFamily: "'Segoe UI', sans-serif", boxSizing: "border-box" },
   navbar: { width: "100%", backgroundColor: "#0d1b3e", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "12px 24px", boxSizing: "border-box", gap: "16px" },
   navLogo: { display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 },
-  logoIcon: { fontSize: "28px", color: "rgba(200,215,255,0.9)", lineHeight: 1 },
+  logoIcon: { width: "28px", height: "28px", objectFit: "contain" },
   logoText: { fontFamily: "'Cormorant Garamond', 'Playfair Display', Georgia, serif", fontSize: "20px", fontWeight: "400", letterSpacing: "0.12em", color: "rgba(200,215,255,0.95)" },
   navSearchForm: { flex: 1, maxWidth: "540px", display: "flex", alignItems: "center", backgroundColor: "#ffffff", borderRadius: "999px", padding: "8px 16px", gap: "8px" },
   searchIcon: { fontSize: "14px", color: "#888" },

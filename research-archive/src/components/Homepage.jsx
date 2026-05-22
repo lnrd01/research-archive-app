@@ -28,7 +28,7 @@ export default function HomePage({ onSearch, user, onOpenProfile }) {
         </div>
         <div className="home-nav-logo">
           <img src="/logo.png" alt="Acadexia logo mark" className="home-logo-mark" onError={(e) => { e.target.style.display = 'none'; }} />
-          <span className="home-logo-letter">✦</span>
+          <button className="home-logo-button" onClick={() => navigate('/profile')}>Log In</button>
         </div>
       </nav>
 
