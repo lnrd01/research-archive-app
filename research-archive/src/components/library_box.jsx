@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/library_box.css";
-import acadexiaLogo from "../assets/acadexia_logo.jpg";
+import acadexiaLogo from "../assets/acadexia_logo.png";
 import {
   NAV_TABS,
   TIME_FILTERS,
@@ -9,7 +9,7 @@ import {
   INITIAL_READING_LISTS,
   filterArticles,
 } from "./acadexiaData.jsx";
-import logoConcept from "../assets/logo concept.png";
+// import logoConcept from "../assets/logo_concept.png";
 
 function BookIcon({ size = 24 }) {
   return (
@@ -50,6 +50,7 @@ function SearchIcon() {
 function LogoIcon() {
   return <img src={acadexiaLogo} alt="Acadexia logo" className="top-nav__logo-mark" />;
 }
+
 function PlusIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none"

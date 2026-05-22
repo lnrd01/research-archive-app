@@ -6,7 +6,7 @@ import SidePanel from "./components/sidePanel";
 import HomePage from "./components/Homepage";
 import AcadexiaLibrary from "./components/library_box";
 import profileImg from "./assets/profile-acc.png";
-import acadexiaLogo from "./assets/acadexia_logo.jpg";
+import acadexiaLogo from "./assets/acadexia_logo.png";
 import { openProfile } from "./store/uiSlice";
 import searchAPI from "./api/search";
 
