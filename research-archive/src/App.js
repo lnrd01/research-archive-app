@@ -95,13 +95,11 @@ function ArticlesPage({
         </form>
 
         <div style={styles.navRight}>
-          {user.username !== "Guest" ? (
+          {user.username !== "Guest" && (
             <button type="button" style={styles.userBadge} onClick={handleOpenLogin}>
               <img src={user.image} alt="Avatar" style={styles.userAvatar} />
               {user.username}
             </button>
-          ) : (
-            <button type="button" style={styles.loginButton} onClick={handleOpenLogin}>Log In</button>
           )}
         </div>
       </div>

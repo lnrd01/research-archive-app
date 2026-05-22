@@ -2,21 +2,21 @@
 
 /* Root Variables */
 :root {
-  --navy: #0d1f5c;
-  --navy-mid: #1a2e6e;
+  --navy: #0d1b3e;
+  --navy-mid: #1a3a6e;
   --blue-accent: #1a54d4;
   --blue-light: #dde3f0;
-  --blue-pale: #e8ecf5;
-  --border: #e0e5ef;
-  --border-light: #e4e8f0;
+  --blue-pale: #e8ecf4;
+  --border: #dde3ef;
+  --border-light: #e0e0e0;
   --text-muted: #9aa5c4;
   --text-body: #334070;
   --text-sub: #6b7a99;
-  --bg-page: #f5f7fc;
+  --bg-page: #f5f5f8;
   --white: #ffffff;
   --red: #c0392b;
   --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-body: 'Lato', sans-serif;
+  --font-body: 'Segoe UI', sans-serif;
 }
 
 /* Base Reset */
