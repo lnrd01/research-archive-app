@@ -9,16 +9,18 @@ const Profile = ({ user, onLogin, onLogout }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
-  const [authView, setAuthView] = useState('login'); 
+  const [authView, setAuthView] = useState('login');
   const [currentUser, setCurrentUser] = useState(user ?? {
     username: 'Guest',
     email: '--',
   });
-  
+  const isAuthenticated = currentUser.username !== 'Guest';
+
   useEffect(() => {
-    if (user) {
-      setCurrentUser(user);
-    }
+    setCurrentUser(user ?? {
+      username: 'Guest',
+      email: '--',
+    });
   }, [user]);
 
   const [formData, setFormData] = useState({ username: '', email: '', password: '' });
@@ -57,19 +59,29 @@ const Profile = ({ user, onLogin, onLogout }) => {
       setError("Please fill all fields");
       return;
     }
-    
+
     if (users.find(u => u.username === formData.username)) {
       setError("Username already exists.");
       return;
     }
 
-    const newUsersList = [...users, { ...formData }];
+    const newUser = {
+      username: formData.username,
+      email: formData.email,
+      password: formData.password,
+      image: profileImg,
+    };
+
+    const newUsersList = [...users, newUser];
     setUsers(newUsersList);
     localStorage.setItem('app_users', JSON.stringify(newUsersList));
-    
+
+    setCurrentUser(newUser);
+    onLogin?.({ username: newUser.username, email: newUser.email, image: profileImg });
     setError("");
-    setAuthView('login'); 
-    alert("Account created! Please log in.");
+    setFormData({ username: '', email: '', password: '' });
+    setShowModal(false);
+    navigate('/');
   };
 
   const handleLogin = (e) => {
@@ -92,13 +104,15 @@ const Profile = ({ user, onLogin, onLogout }) => {
   };
 
   const handleSignOut = () => {
-    setCurrentUser({ username: 'Guest', email: '--',});
+    setCurrentUser({ username: 'Guest', email: '--' });
     onLogout?.();
+    setShowModal(false);
+    navigate('/');
   };
 
-  const openAddAccount = () => {
-    setAuthView('login'); 
-    setError("");
+  const openAuthModal = (view = 'login') => {
+    setAuthView(view);
+    setError('');
     setShowModal(true);
   };
 
@@ -108,24 +122,39 @@ const Profile = ({ user, onLogin, onLogout }) => {
       <div className="card-container" onClick={(e) => e.stopPropagation()}>
         <div className="profile-section">
           <div className="profile-image-wrapper">
-            <img src={profileImg} alt="Profile" className="profile-image" />
+            <img src={currentUser.image || profileImg} alt="Profile" className="profile-image" />
           </div>
           <div className="profile-info">
             <div className="profile-name-row">
               <h2 className="user-name">{currentUser.username}</h2>
             </div>
             <p className="user-email">{currentUser.email}</p>
-            <button className="btn primary-btn">My Account</button>
+            <p className="profile-status">
+              {isAuthenticated ? 'Logged in' : 'Not signed in yet'}
+            </p>
+            <button className="btn primary-btn" onClick={() => openAuthModal(isAuthenticated ? 'account' : 'login')}>
+              {isAuthenticated ? 'Manage account' : 'Log in / Sign up'}
+            </button>
           </div>
         </div>
 
         <hr className="divider" />
 
         <div className="action-section">
-          <button className="btn secondary-btn" onClick={openAddAccount}>
-            Add Account
-          </button>
-          <button className="btn secondary-btn" onClick={handleSignOut}>Sign Out</button>
+          {isAuthenticated ? (
+            <button className="btn secondary-btn" onClick={handleSignOut}>
+              Sign Out
+            </button>
+          ) : (
+            <>
+              <button className="btn secondary-btn" onClick={() => openAuthModal('login')}>
+                Log In
+              </button>
+              <button className="btn secondary-btn" onClick={() => openAuthModal('signup')}>
+                Sign Up
+              </button>
+            </>
+          )}
         </div>
       </div>
 
@@ -134,7 +163,19 @@ const Profile = ({ user, onLogin, onLogout }) => {
         <div className="modal-overlay" onClick={handleCloseModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             
-            {authView === 'login' ? (
+            {authView === 'account' ? (
+              <>
+                <h3>Account Details</h3>
+                <div className="account-summary">
+                  <p><strong>Username:</strong> {currentUser.username}</p>
+                  <p><strong>Email:</strong> {currentUser.email}</p>
+                </div>
+                <div className="modal-actions">
+                  <button type="button" className="btn secondary-btn" onClick={handleSignOut}>Sign Out</button>
+                  <button type="button" className="btn cancel-btn" onClick={handleCloseModal}>Close</button>
+                </div>
+              </>
+            ) : authView === 'login' ? (
               <>
                 <h3>Log In</h3>
                 <form onSubmit={handleLogin}>

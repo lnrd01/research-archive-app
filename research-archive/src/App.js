@@ -94,6 +94,12 @@ function ArticlesPage({
           />
         </form>
 
+        <div style={styles.navRight}>
+          <button style={styles.userBadge} onClick={handleOpenLogin}>
+            <img src={user.image} alt="User avatar" style={styles.userAvatar} />
+            {user.username === "Guest" ? "Sign In" : `Hi, ${user.username}`}
+          </button>
+        </div>
       </div>
 
       {/* TAB BAR */}

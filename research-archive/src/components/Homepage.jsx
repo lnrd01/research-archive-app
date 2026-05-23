@@ -20,7 +20,8 @@ export default function HomePage({ onSearch, user, onOpenProfile }) {
       <nav className="home-nav">
         <div className="home-nav-left">
           <button className="home-nav-btn" onClick={onOpenProfile}>
-            <span className="home-nav-icon">⌂</span> My Profile
+            <span className="home-nav-icon">👤</span>
+            {user?.username === 'Guest' ? 'My Profile' : 'My Account'}
           </button>
           <button className="home-nav-btn" onClick={() => navigate("/library")}>
             <span className="home-nav-icon">☆</span> My Library
@@ -28,7 +29,9 @@ export default function HomePage({ onSearch, user, onOpenProfile }) {
         </div>
         <div className="home-nav-logo">
           <img src="/logo.png" alt="Acadexia logo mark" className="home-logo-mark" onError={(e) => { e.target.style.display = 'none'; }} />
-          <button className="home-logo-button" onClick={() => navigate('/profile')}>Log In</button>
+          <button className="home-logo-button" onClick={onOpenProfile}>
+            {user?.username === 'Guest' ? 'Log In' : `Welcome, ${user.username}`}
+          </button>
         </div>
       </nav>
 

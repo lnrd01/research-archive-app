@@ -85,6 +85,12 @@
   opacity: 0.8;
 }
 
+.profile-status {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(209, 217, 233, 0.75);
+}
+
 .divider {
   width: 100%;
   border: none;
@@ -96,10 +102,13 @@
 .action-section {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .btn {
+  min-width: 140px;
+  flex: 1;
   border: none;
   border-radius: 40px;
   font-size: 18px;
@@ -207,6 +216,19 @@
   color: #D1D9E9;
   font-size: 14px;
   opacity: 0.9;
+}
+
+.account-summary {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: #e9edf7;
+  font-size: 15px;
+}
+
+.account-summary p {
+  margin: 0;
+  line-height: 1.5;
 }
 
 .toggle-text span {
