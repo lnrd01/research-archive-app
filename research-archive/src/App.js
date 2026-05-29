@@ -129,11 +129,12 @@ function ArticlesPage({
 
         <div style={styles.resultsWrapper}>
           {!hasSearched && !loading && (
-            <div style={styles.emptyMessage}>Search millions of open-access academic articles powered by OpenAlex.</div>
+            <div style={styles.emptyMessage}>Search millions of open-access academic articles powered by CORE API.</div>
           )}
           {loading && <div style={styles.emptyMessage}>Searching…</div>}
           {!loading && hasSearched && searchResults.length === 0 && (
-            <div style={styles.emptyMessage}>No results found. Try a different search term.</div>
+            <div style={styles.emptyMessage}>No results found. Try a different search term.</div>u
+           
           )}
           {!loading && hasSearched && searchResults.length > 0 && filteredResults.length === 0 && (
             <div style={styles.emptyMessage}>
