@@ -19,13 +19,13 @@ ACADEXIA is a React-based academic research library application that allows user
 
 
 
-![Search Result](research-archive/src/assets/article.jpg)
+![Search Result](research-archive/src/assets/article.jpeg)
 
 
 
 
 
-![My Library](research-archive/src/assets/myLibrary.jpg)
+![My Library](research-archive/src/assets/myLibrary.jpeg)
 
 ---
 
