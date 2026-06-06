@@ -13,7 +13,7 @@ ACADEXIA is a React-based academic research library application that allows user
 
 
 
-![Home](research-archive/src/assets/home.jpg)
+![Home](research-archive/src/assets/home.jpeg)
 
 
 
@@ -36,6 +36,14 @@ ACADEXIA is a React-based academic research library application that allows user
 - 📚 **My Library** — Save articles to personal reading lists and archives
 - 👤 **User Profiles** — Guest and authenticated account support with profile management
 - ⚡ **Fast & Responsive** — Built with React for a smooth single-page experience
+
+---
+
+## Installation
+
+- cd research-archive
+- npm install
+- npm start
 
 ---
 
